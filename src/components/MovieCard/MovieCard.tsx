@@ -1,9 +1,13 @@
-import React from "react";
+import React, { useEffect } from 'react';
 
-const MovieCard = ({ movie, remove, edit }) => {
+const MovieCard = React.memo(({ movie, remove, edit }) => {
   const editTitleOfMovie = (e) => {
     edit(movie.id, e.target.value);
   };
+
+  useEffect(() => {
+    console.log(`${movie.title}`);
+  }, [movie.title]);
 
   return (
     <div
@@ -28,7 +32,9 @@ const MovieCard = ({ movie, remove, edit }) => {
         />
       </button>
     </div>
-  );
-};
+  )
+}, (prevProps, nextProps) => {
+  return false;
+});
 
 export default MovieCard;
