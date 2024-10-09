@@ -1,12 +1,12 @@
 import './App.css';
 import Movies from './containers/Movies/Movies.tsx';
-import Jokes from './containers/Jokes/Jokes.tsx';
 
 
 const App = () => {
   return <>
-    <Movies />
-    <Jokes />
+    <div className="container mt-5 d-flex justify-content-center">
+      <Movies />
+    </div>
   </>;
 };
 
